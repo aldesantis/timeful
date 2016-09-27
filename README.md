@@ -89,10 +89,11 @@ Now, you can publish the `comment` activity:
 user.publish_activity 'comment', object: comment
 ```
 
-This will create an `Activity` and link it to the post's author feed through a `FeedItem`:
+This will create an `Activity` and link it to the author's feed through a `FeedItem`:
 
 ```ruby
-comment.post.author.feed_items.count # => 1
+author = comment.post.author
+author.feed_items.count # => 1
 ```
 
 ## Contributing
