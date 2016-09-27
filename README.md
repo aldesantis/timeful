@@ -4,7 +4,7 @@
 [![Dependency Status](https://img.shields.io/gemnasium/alessandro1997/timeful.svg?maxAge=3600&style=flat-square)](https://gemnasium.com/github.com/alessandro1997/timeful)
 [![Code Climate](https://img.shields.io/codeclimate/github/alessandro1997/timeful.svg?maxAge=3600&style=flat-square)](https://codeclimate.com/github/alessandro1997/timeful)
 
-Timeful is a Ruby on Rails engine for building timelines (aka _activity streams_).
+Timeful is a Ruby on Rails engine for building timelines (aka "activity streams").
 
 ## Why another gem?
 
@@ -69,8 +69,8 @@ Timeful revolves around three core concepts:
 - **Feed**: A collection of activities that should be accessible by a specific user.
 - **Feed item**: The instance of an activity in a user's feed.
 
-Each activity type has its own class. This is required because Timeful has to know which feeds the
-activity should be added to.
+Each activity action (or "type") has its own class. This is required because Timeful has to know
+which feeds the activity should be added to.
 
 To avoid polluting `app/models`, it is recommended to put your activities in the `app/activities`
 directory.
@@ -88,7 +88,7 @@ end
 Now, you can publish the `comment` activity:
 
 ```ruby
-user.publish_activity 'comment', object: comment
+user.publish_activity :comment, object: comment
 ```
 
 This will create an `Activity` and link it to the author's feed through a `FeedItem`:

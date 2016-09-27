@@ -17,13 +17,6 @@ AllCops:
    - 'Rakefile'
    - 'Gemfile'
 
-Style/Documentation:
-  Enabled: false
-
-RSpec/DescribeClass:
-  Exclude:
-    - 'spec/requests/*'
-
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
@@ -35,7 +28,7 @@ Style/ClosingParenthesisIndentation:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 80
+  Max: 100
   AllowURI: true
 
 Style/FirstParameterIndentation:
