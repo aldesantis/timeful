@@ -18,16 +18,10 @@ module Timeful
         # @return [Activity] the created activity
         #
         # @example
-        #   actor.publish_activity :post_created, object: post
-        #   # => #<PostCreatedActivity>
+        #   actor.publish_activity :post_created, object: post # => #<PostCreatedActivity>
         def publish_activity(action, object:)
-          activity = activity_klass(action).create!(object: object, actor: self)
-
-          RelationProxy.new(activity.subscribers).find_each do |subscriber|
-            subscriber.feed_items.create!(activity: activity)
-          end
-
-          activity
+          activity = activity_klass(action).create! object: object, actor: self
+          DeliverActivityToSubscribersJob.perform_later activity
         end
 
         private

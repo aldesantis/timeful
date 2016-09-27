@@ -12,10 +12,9 @@ RSpec.describe Timeful::Model::Actor do
     end
 
     it 'creates a feed item for subscribers' do
-      create(:user)
       expect {
         subject.publish_activity :post, object: post
-      }.to change(FeedItem, :count).by(1)
+      }.to enqueue_job(Timeful::DeliverActivityToSubscribersJob)
     end
   end
 end

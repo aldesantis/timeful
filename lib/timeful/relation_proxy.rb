@@ -14,8 +14,15 @@ module Timeful
     #
     # @yieldparam item [Object] the items in the object
     def find_each(*args)
-      return __getobj__.find_each(*args) if __getobj__.respond_to?(:find_each)
-      each { |item| yield item }
+      method = if __getobj__.respond_to?(:find_each)
+        :find_each
+      else
+        :each
+      end
+
+      __getobj__.send(method, *args) do |item|
+        yield item
+      end
     end
   end
 end

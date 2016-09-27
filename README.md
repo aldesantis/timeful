@@ -56,8 +56,8 @@ usually your `User` model, but you can use two different models):
 
 ```ruby
 class User < ActiveRecord::Base
-  include Timeful::Model::Feedable
   include Timeful::Model::Actor
+  include Timeful::Model::Subscriber
 end
 ```
 

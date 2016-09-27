@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-RSpec.describe Timeful::Model::Feedable do
+RSpec.describe Timeful::Model::Subscriber do
   subject { create(:user) }
 
   describe '#feed_items' do
