@@ -8,5 +8,5 @@ require 'timeful/model/feedable'
 
 require 'timeful/engine'
 
-module Timeful
+module Timeful # rubocop:disable Style/Documentation
 end
