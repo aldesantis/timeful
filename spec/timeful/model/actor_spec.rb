@@ -10,5 +10,12 @@ RSpec.describe Timeful::Model::Actor do
         subject.publish_activity :post, object: post
       }.to change(PostActivity, :count).by(1)
     end
+
+    it 'creates a feed item for subscribers' do
+      create(:user)
+      expect {
+        subject.publish_activity :post, object: post
+      }.to change(FeedItem, :count).by(1)
+    end
   end
 end

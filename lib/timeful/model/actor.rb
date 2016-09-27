@@ -8,7 +8,11 @@ module Timeful
 
       module InstanceMethods
         def publish_activity(action, object:)
-          activity_klass(action).create(object: object, actor: self)
+          activity = activity_klass(action).create!(object: object, actor: self)
+
+          RelationProxy.new(activity.subscribers).find_each do |subscriber|
+            subscriber.feed_items.create!(activity: activity)
+          end
         end
 
         private
