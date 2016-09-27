@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927155215) do
+ActiveRecord::Schema.define(version: 20160927160031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "timeful_activities", force: :cascade do |t|
     t.string   "type",        null: false
@@ -34,6 +39,11 @@ ActiveRecord::Schema.define(version: 20160927155215) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["feedable_type", "feedable_id"], name: "index_timeful_feed_items_on_feedable_type_and_feedable_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "timeful_feed_items", "timeful_activities", column: "activity_id", on_delete: :cascade
