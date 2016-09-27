@@ -98,6 +98,10 @@ author = comment.post.author
 author.feed_items.count # => 1
 ```
 
+## Performance
+
+TODO: Write performance considerations
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/alessandro1997/timeful.
