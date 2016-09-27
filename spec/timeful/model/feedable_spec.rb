@@ -2,11 +2,16 @@
 RSpec.describe Timeful::Model::Feedable do
   subject { create(:user) }
 
-  let(:feed_item) { create(:feed_item, feedable: subject) }
-
   describe '#feed_items' do
     it "returns the items in the user's feeds" do
+      feed_item = create(:feed_item, feedable: subject)
       expect(subject.feed_items).to match_array([feed_item])
+    end
+
+    it 'orders items by newest to oldest' do
+      oldest_item = create(:feed_item, feedable: subject)
+      newest_item = create(:feed_item, feedable: subject)
+      expect(subject.feed_items).to eq([newest_item, oldest_item])
     end
   end
 end
