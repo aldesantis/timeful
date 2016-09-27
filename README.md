@@ -48,12 +48,13 @@ $ rails g timeful:install
 $ rake db:migrate
 ```
 
-Finally, add the following to the model that will receive the notifications (e.g. `User`):
+Finally, add the following to the model that will have a feed and publish activities (this is
+usually your `User` model, but you can use two different models):
 
 ```ruby
 class User < ActiveRecord::Base
-  include Timeful::Model::Actor
   include Timeful::Model::Feedable
+  include Timeful::Model::Actor
 end
 ```
 
@@ -67,7 +68,12 @@ Timeful revolves around three core concepts:
 - **Feed item**: The instance of an activity in a user's feed.
 
 Each activity type has its own class. This is required because Timeful has to know which feeds the
-activity should be added to:
+activity should be added to.
+
+To avoid polluting `app/models`, it is recommended to put your activities in the `app/activities`
+directory.
+
+Here's an example activity:
 
 ```ruby
 class CommentActivity < Timeful::Activity
