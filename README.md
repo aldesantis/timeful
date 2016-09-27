@@ -9,16 +9,18 @@ Timeful is a Ruby on Rails engine for building timelines (aka _activity streams_
 ## Why another gem?
 
 There are battle-tested activity stream builders out there already (the most notable being
-[PublicActivity](https://github.com/chaps-io/public_activity) and
-[TimelineFu](https://github.com/jamesgolick/timeline_fu)). However, these gems do not really create
-a feed for each user, but simply record a list of global activities and leave you to deal with the
-retrieval.
+[PublicActivity](https://github.com/chaps-io/public_activity),
+[TimelineFu](https://github.com/jamesgolick/timeline_fu) and
+[Social Stream](https://github.com/ging/social_stream)).
+
+However, these gems do not really create a feed for each user, but simply record a list of global
+activities and leave you to deal with the retrieval.
 
 Timeful is different: it takes a simple approach at building user feeds and allows you to obtain
 an ordered list of feed items for each user.
 
-Also, Timeful does not deal with presentation: you will have to build your own views and controllers
-to expose feeds. This keeps the codebase smaller and allows you to easily integrate Timeful in JSON
+Also, Timeful does not handle presentation: you will have to build your own views and controllers to
+expose feeds. This keeps the codebase smaller and allows you to easily integrate Timeful in JSON
 APIs.
 
 ## Installation
