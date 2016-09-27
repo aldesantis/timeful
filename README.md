@@ -47,6 +47,8 @@ end
 
 ## Usage
 
+TODO: Write usage instructions
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/alessandro1997/timeful.
