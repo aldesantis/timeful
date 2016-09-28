@@ -12,7 +12,7 @@ module Timeful
       def self.included(klass)
         klass.class_eval do
           has_many :feed_items, -> { order(created_at: :desc) },
-            as: :feedable,
+            as: :subscriber,
             class_name: 'Timeful::FeedItem'
         end
       end
