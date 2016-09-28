@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 module Timeful
   # An activity is something that happens in your application. It's comprised of an actor, an
-  # action and an object.
+  # action and an target.
   #
-  # An example activity might be: "John Doe (actor) published (action) a new post (object)."
+  # An example activity might be: "John Doe (actor) published (action) a new post (target)."
   #
   # @author Alessandro Desantis
   #
@@ -12,12 +12,12 @@ module Timeful
   # @example
   #   class CommentCreatedActivity < Timeful::Activity
   #     def subscribers
-  #       [object.post.author]
+  #       [target.post.author]
   #     end
   #   end
   class Activity < ApplicationRecord
     belongs_to :actor, polymorphic: true
-    belongs_to :object, polymorphic: true
+    belongs_to :target, polymorphic: true
 
     # Returns the users that subscribe to this activity. A {FeedItem} linked to the activity will
     # be created for these users.

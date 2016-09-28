@@ -65,8 +65,8 @@ end
 
 Timeful revolves around three core concepts:
 
-- **Activity**: An _action_ taken by an _actor_ on an _object_. _Metadata_ can also be attached to
-  activities. An example would be "John Doe (actor) wrote (action) a comment (object)."
+- **Activity**: An _action_ taken by an _actor_ on an _target_. _Metadata_ can also be attached to
+  activities. An example would be "John Doe (actor) wrote (action) a comment (target)."
 - **Feed**: A collection of activities that should be accessible by a specific user.
 - **Feed item**: The instance of an activity in a user's feed.
 
@@ -81,7 +81,7 @@ Here's an example activity:
 ```ruby
 class CommentActivity < Timeful::Activity
   def subscribers
-    [object.post.author]
+    [target.post.author]
   end
 end
 ```
@@ -89,7 +89,7 @@ end
 Now, you can publish the `comment` activity:
 
 ```ruby
-user.publish_activity :comment, object: comment
+user.publish_activity :comment, target: comment
 ```
 
 This will create an `Activity` and link it to the author's feed through a `FeedItem`:

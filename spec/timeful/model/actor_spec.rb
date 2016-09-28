@@ -7,13 +7,13 @@ RSpec.describe Timeful::Model::Actor do
   describe '#publish_activity' do
     it 'creates a new activity' do
       expect {
-        subject.publish_activity :post, object: post
+        subject.publish_activity :post, target: post
       }.to change(PostActivity, :count).by(1)
     end
 
     it 'creates a feed item for subscribers' do
       expect {
-        subject.publish_activity :post, object: post
+        subject.publish_activity :post, target: post
       }.to enqueue_job(Timeful::DeliverActivityToSubscribersJob)
     end
   end
