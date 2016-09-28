@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 module Timeful
+  # Creates a feed item for each subscriber of the activity.
+  #
+  # @author Alessandro Desantis
   class DeliverActivityToSubscribersJob < ActiveJob::Base
     queue_as { Timeful.jobs_queue }
 

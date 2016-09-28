@@ -58,3 +58,9 @@ Style/AndOr:
 
 Metrics/MethodLength:
   Max: 15
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/MessageExpectation:
+  Enabled: false

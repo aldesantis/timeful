@@ -13,16 +13,14 @@ module Timeful
     # Otherwise, calls +each+ on the object and yields the values.
     #
     # @yieldparam item [Object] the items in the object
-    def find_each(*args)
+    def find_each(*args, &block)
       method = if __getobj__.respond_to?(:find_each)
         :find_each
       else
         :each
       end
 
-      __getobj__.send(method, *args) do |item|
-        yield item
-      end
+      __getobj__.send(method, *args, &block)
     end
   end
 end
