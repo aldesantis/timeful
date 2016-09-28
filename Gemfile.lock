@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    timeful (2.0.0)
+    timeful (2.1.0)
       rails (>= 4.0.0, < 6.0.0)
 
 GEM
