@@ -92,6 +92,12 @@ Now, you can publish the `comment` activity:
 user.publish_activity :comment, target: comment
 ```
 
+You can also attach metadata to the activity:
+
+```ruby
+user.publish_activity :comment, target: comment, meta: { foo: 'bar' }
+```
+
 This will create an `Activity` and link it to the author's feed through a `FeedItem`:
 
 ```ruby

@@ -16,6 +16,8 @@ module Timeful
   #     end
   #   end
   class Activity < ApplicationRecord
+    serialize :meta, Hash
+
     belongs_to :actor, polymorphic: true
     belongs_to :target, polymorphic: true
 

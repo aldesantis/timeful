@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928114457) do
+ActiveRecord::Schema.define(version: 20160928120048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160928114457) do
     t.string   "actor_id",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.text     "meta"
     t.index ["actor_type", "actor_id"], name: "index_timeful_activities_on_actor_type_and_actor_id", using: :btree
     t.index ["target_type", "target_id"], name: "index_timeful_activities_on_target_type_and_target_id", using: :btree
   end
