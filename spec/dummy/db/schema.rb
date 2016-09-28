@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928104634) do
+ActiveRecord::Schema.define(version: 20160928113645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20160928104634) do
   create_table "timeful_activities", force: :cascade do |t|
     t.string   "type",        null: false
     t.string   "object_type", null: false
-    t.integer  "object_id",   null: false
+    t.string   "object_id",   null: false
     t.string   "actor_type",  null: false
-    t.integer  "actor_id",    null: false
+    t.string   "actor_id",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["actor_type", "actor_id"], name: "index_timeful_activities_on_actor_type_and_actor_id", using: :btree
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160928104634) do
 
   create_table "timeful_feed_items", force: :cascade do |t|
     t.string   "subscriber_type", null: false
-    t.integer  "subscriber_id",   null: false
+    t.string   "subscriber_id",   null: false
     t.integer  "activity_id",     null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
