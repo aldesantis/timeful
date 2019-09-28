@@ -1,4 +1,4 @@
-class ChangeForeignIdsToString < ActiveRecord::Migration
+class ChangeForeignIdsToString < ActiveRecord::Migration[4.2]
   def up
     change_column :timeful_feed_items, :subscriber_id, :string
     change_column :timeful_activities, :actor_id, :string

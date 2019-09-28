@@ -1,4 +1,4 @@
-class CreateTimefulActivities < ActiveRecord::Migration[5.0]
+class CreateTimefulActivities < ActiveRecord::Migration[4.2]
   def change
     create_table :timeful_activities do |t|
       t.string :type, null: false

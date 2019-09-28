@@ -1,4 +1,4 @@
-class AddMetaToActivities < ActiveRecord::Migration[5.0]
+class AddMetaToActivities < ActiveRecord::Migration[4.2]
   def change
     add_column :timeful_activities, :meta, :text
   end

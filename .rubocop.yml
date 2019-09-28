@@ -9,13 +9,6 @@ AllCops:
    - 'bin/*'
    - 'db/**/*'
    - 'vendor/bundle/**/*'
-   - 'spec/spec_helper.rb'
-   - 'spec/rails_helper.rb'
-   - 'spec/support/**/*'
-   - 'spec/dummy/**/*'
-   - 'config/**/*'
-   - 'Rakefile'
-   - 'Gemfile'
 
 Style/BlockDelimiters:
   Exclude:

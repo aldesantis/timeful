@@ -1,4 +1,4 @@
-class CreateTimefulFeedItems < ActiveRecord::Migration[5.0]
+class CreateTimefulFeedItems < ActiveRecord::Migration[4.2]
   def change
     create_table :timeful_feed_items do |t|
       t.string :feedable_type, null: false
