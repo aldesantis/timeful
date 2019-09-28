@@ -1,0 +1,22 @@
+sudo: false
+language: ruby
+before_install: gem install bundler
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+matrix:
+  include:
+    - rvm: 2.4
+      env: RAILS_VERSION='~> 5.2.0'
+    - rvm: 2.5
+      env: RAILS_VERSION='~> 5.2.0'
+    - rvm: 2.5
+      env: RAILS_VERSION='~> 6.0.0'
+    - rvm: 2.6
+      env: RAILS_VERSION='~> 5.2.0'
+    - rvm: 2.6
+      env: RAILS_VERSION='~> 6.0.0'
