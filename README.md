@@ -1,8 +1,8 @@
 # Timeful
 
-[![Gem Version](https://img.shields.io/gem/v/timeful.svg?maxAge=3600&style=flat-square)](https://rubygems.org/gems/timeful)
-[![Dependency Status](https://img.shields.io/gemnasium/alessandro1997/timeful.svg?maxAge=3600&style=flat-square)](https://gemnasium.com/github.com/alessandro1997/timeful)
-[![Code Climate](https://img.shields.io/codeclimate/github/alessandro1997/timeful.svg?maxAge=3600&style=flat-square)](https://codeclimate.com/github/alessandro1997/timeful)
+[![Gem Version](https://badge.fury.io/rb/timeful.svg)](https://badge.fury.io/rb/timeful)
+[![Build Status](https://travis-ci.org/aldesantis/timeful.svg?branch=master)](https://travis-ci.org/aldesantis/timeful)
+[![Maintainability](https://api.codeclimate.com/v1/badges/54290b636ef759bb5c53/maintainability)](https://codeclimate.com/github/aldesantis/timeful/maintainability)
 
 Timeful is a Ruby on Rails engine for building timelines (aka "activity streams").
 
